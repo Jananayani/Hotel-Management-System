@@ -39,7 +39,7 @@ public class HotelService {
         return hotelRepository.findAll();
     }
 
-    public void deleteHotel(Long id) {
+    public void deleteHotel(Integer id) {
         hotelRepository.deleteById(id);
     }
 
@@ -50,6 +50,7 @@ public class HotelService {
 
         room.setRoomNumber(roomDto.getRoomNumber());
         room.setRoomStatus(roomDto.getRoomStatus());
+        room.setIsActive(roomDto.getIsActive());
 
         // Fetch RoomType by roomTypeId from the repository
         Optional<RoomType> roomType = roomTypeRepository.findById(roomDto.getRoomTypeId());
@@ -61,6 +62,7 @@ public class HotelService {
         // Set the roomType and hotel objects in the Room entity
         room.setRoomType(exsistingRoomType);
         room.setHotel(existingHotel);
+
         return roomRepository.save(room);
     }
 

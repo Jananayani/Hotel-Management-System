@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface RoomDao extends JpaRepository<Room, Integer> {
-    @Query(value = "SELECT r.room_number FROM room r Where r.room_status='available'", nativeQuery = true)
+    @Query(value = "SELECT r.room_number FROM room r Where r.is_active=true", nativeQuery = true)
     List<Integer> findAvailableRooms();
 
 }

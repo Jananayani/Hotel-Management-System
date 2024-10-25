@@ -13,9 +13,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RoomDto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private int id;
 
     @NotNull(message = "Room number cannot be null")
     private int roomNumber;
@@ -29,5 +29,5 @@ public class RoomDto {
     private Long roomTypeId;
 
     @NotNull(message = "hotel id cannot be null")
-    private Long hotelId;
+    private int hotelId;
 }
